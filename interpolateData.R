@@ -124,10 +124,11 @@ interpolateValues <- function(data) {
     cat('\r', k, ' lines done\n')
     j <- j + 1
   }
+  return(data)
 }
 
 # interpolate missing values on each timeseries
-interpolateValues(data)
+data <- interpolateValues(data)
 
 # filter unmeaningful Data (change boundaries in other data...)
 data <- data[!(data$TIMESTAMP < 10),]
